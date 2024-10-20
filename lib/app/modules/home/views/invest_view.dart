@@ -23,7 +23,9 @@ class InvestView extends GetView {
                         Align(
                             alignment: Alignment.centerRight,
                             child: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.back();
+                                },
                                 icon: const Icon(
                                   Icons.cancel,
                                   color: Colors.red,

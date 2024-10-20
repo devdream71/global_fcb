@@ -93,7 +93,7 @@ class HomeView extends GetView<HomeController> {
                           Text(
                             "Withrow",
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 15,
                                 color: Colors.blue,
                                 fontWeight: FontWeight.bold),
                           ),

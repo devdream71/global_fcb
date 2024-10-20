@@ -27,6 +27,10 @@ class LoginPassView extends GetView {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      SizedBox(height: 5,
+                      width: 5,
+                      key: GlobalKey(),
+                      ),
                       Container(
                         width: 140.0,
                         height: 140.0,
