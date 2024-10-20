@@ -1,6 +1,6 @@
+import 'package:fcb_global_app_v1/app/modules/settings/settings.dart';
 import 'package:fcb_global_app_v1/app/modules/team/team.dart';
 import 'package:get/get.dart';
-
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -28,6 +28,12 @@ class AppPages {
     GetPage(
       name: _Paths.TEAM,
       page: () => const TeamView(),
+      binding: LoginBinding(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: _Paths.SETTINGS,
+      page: () => const Setting(),
       binding: LoginBinding(),
       transition: Transition.rightToLeft,
     ),

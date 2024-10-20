@@ -3,6 +3,7 @@ import 'package:fcb_global_app_v1/app/core/values/app_colors.dart';
 import 'package:fcb_global_app_v1/app/core/values/app_space.dart';
 import 'package:fcb_global_app_v1/app/modules/home/views/invest_view.dart';
 import 'package:fcb_global_app_v1/app/modules/home/views/package_view.dart';
+import 'package:fcb_global_app_v1/app/modules/settings/settings.dart';
 import 'package:fcb_global_app_v1/app/modules/team/team.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -29,6 +30,16 @@ class HomeView extends GetView<HomeController> {
                   color: AppColors.appcolor,
                   child: Column(
                     children: [
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: IconButton(
+                              onPressed: () {
+                                Get.to(const Setting(), transition: Transition.rightToLeftWithFade);
+                              },
+                              icon: const Icon(
+                                Icons.settings,
+                                color: Colors.white,
+                              ))),
                       buildRating(),
                       AppSpace.spaceH6,
                       buildBalance(),
@@ -348,7 +359,7 @@ class HomeView extends GetView<HomeController> {
             flex: 1,
             child: InkWell(
               onTap: () {
-                Get.to(() => const TeamView());   
+                Get.to(() => const TeamView());
               },
               child: Column(
                 children: [

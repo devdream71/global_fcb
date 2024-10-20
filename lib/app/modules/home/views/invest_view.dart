@@ -17,19 +17,27 @@ class InvestView extends GetView {
               padding: const EdgeInsets.all(25),
               child: Column(
                 children: [
-                  const Center(
+                  Center(
                     child: Column(
                       children: [
-                        Icon(
+                        Align(
+                            alignment: Alignment.centerRight,
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.cancel,
+                                  color: Colors.red,
+                                ))),
+                        const Icon(
                           Icons.api_outlined,
                           size: 60,
                           color: Colors.white,
                         ),
-                        Text(
+                        const Text(
                           "Invest",
                           style: TextStyle(fontSize: 16, color: Colors.white),
                         ),
-                        Text(
+                        const Text(
                           "Welcome For Invest",
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
@@ -61,7 +69,7 @@ class InvestView extends GetView {
                       ],
                     ),
                   ),
-                  CustomTextField(),
+                  const CustomTextField(),
                   AppSpace.spaceH10,
                   AppSpace.spaceH10,
                   Align(

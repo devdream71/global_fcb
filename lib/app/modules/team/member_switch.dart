@@ -1,14 +1,11 @@
 import 'package:fcb_global_app_v1/app/core/values/app_assets.dart';
 import 'package:fcb_global_app_v1/app/core/values/app_colors.dart';
-import 'package:fcb_global_app_v1/app/modules/team/member_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
-class TeamView extends StatelessWidget {
-  const TeamView({super.key});
+class MemberSwitch extends StatelessWidget {
+  const MemberSwitch({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,13 +17,15 @@ class TeamView extends StatelessWidget {
           ),
 
           Align(
-              alignment: Alignment.centerRight,
-              child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.cancel,
-                    color: Colors.red,
-                  ),),),
+            alignment: Alignment.centerRight,
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.cancel,
+                color: Colors.red,
+              ),
+            ),
+          ),
 
           buildRating(),
 
@@ -171,15 +170,15 @@ buildRating() {
         backgroundImage: AssetImage(AppAssets.appLogo),
       ),
       Text(
-        'Md. Mosiur Rahman Rangga',
+        'Md. Anwar Alom',
         style: TextStyle(fontSize: 13, color: Colors.white),
       ),
       Text(
-        'mosiur@gmail.com',
+        'anowar@gmail.com',
         style: TextStyle(fontSize: 13, color: Colors.white),
       ),
       Text(
-        'Ref: Md. Monirol Islam',
+        'Ref: Md. Korim',
         style: TextStyle(fontSize: 13, color: Colors.white),
       ),
     ],
@@ -260,40 +259,34 @@ class MemberTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
-      child: InkWell(
-        onTap: () {
-          Get.to(const MemberSwitch(),
-              transition: Transition.rightToLeftWithFade);
-        },
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(member.name,
-                        style: const TextStyle(color: Colors.white)),
-                    Text(member.email,
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 12)),
-                    Text(member.ref,
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 12)),
-                  ],
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(member.name,
+                      style: const TextStyle(color: Colors.white)),
+                  Text(member.email,
+                      style:
+                          const TextStyle(color: Colors.white, fontSize: 12)),
+                  Text(member.ref,
+                      style:
+                          const TextStyle(color: Colors.white, fontSize: 12)),
+                ],
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Text(
+                  '${member.score}',
+                  style: const TextStyle(color: Colors.black, fontSize: 16),
                 ),
-                CircleAvatar(
-                  backgroundColor: Colors.white,
-                  child: Text(
-                    '${member.score}',
-                    style: const TextStyle(color: Colors.black, fontSize: 16),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

@@ -17,14 +17,22 @@ class PackageView extends GetView {
                   top: 30, left: 15, right: 15, bottom: 15),
               child: Column(
                 children: [
-                  const Column(
+                  Column(
                     children: [
-                      Icon(
+                      Align(
+                          alignment: Alignment.centerRight,
+                          child: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.cancel,
+                                color: Colors.red,
+                              ))),
+                      const Icon(
                         Icons.api_outlined,
                         size: 70,
                         color: Colors.white,
                       ),
-                      Text(
+                      const Text(
                         "Package",
                         style: TextStyle(fontSize: 16, color: Colors.white),
                       ),
@@ -33,7 +41,7 @@ class PackageView extends GetView {
                   ListView.builder(
                       itemCount: 6,
                       shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const  NeverScrollableScrollPhysics(),
                       itemBuilder: (BuildContext context, int index) {
                         return Padding(
                           padding: const EdgeInsets.all(15),
